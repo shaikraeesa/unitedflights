@@ -1,0 +1,25 @@
+#%RAML 1.0
+title: flights
+baseUri: http://localhost:8081/api
+/unitedFlighsByDestiantion: 
+  get: 
+    queryParameters: 
+      destination:
+        required: true
+        minLength: 3
+        maxLength: 3
+    responses: 
+      200: 
+        body: 
+          application/json: 
+           example: !include examples/unitedFlighsByDestiantion-get-response.json
+          
+/listAllUnitedFlights:
+  get: 
+    responses: 
+      200: 
+        body: 
+          application/json: 
+            example: !include examples/listAllUnitedFlights-get-response.json
+
+             
